@@ -1,0 +1,609 @@
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#070812;--bg2:#0b0e1a;--text:#f8f8fb;--muted:#9b9eb0;--pink:#ff3cac;--purple:#8b5cf6;--cyan:#43d9ff;--line:rgba(255,255,255,.10);--glass:rgba(255,255,255,.045)}
+html{
+            scroll-behavior:smooth}
+body{   
+            font-family:"DM Sans",sans-serif;
+            background:radial-gradient(circle at 10% 15%,rgba(139,92,246,.14),transparent 28%),radial-gradient(circle at 90% 20%,rgba(255,60,172,.11),transparent 25%),var(--bg);
+            color:var(--text);
+            overflow-x:hidden}
+body:before{
+            content:"";
+            position:fixed;
+            inset:0;
+            pointer-events:none;
+            background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+            background-size:70px 70px;
+            mask-image:linear-gradient(to bottom,black,transparent 80%);
+            z-index:-1}
+a{      
+            text-decoration:none;color:inherit}
+button{     
+            font:inherit}
+.site-header{
+            position:fixed;
+            top:0;left:0;right:0;height:78px;
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            padding:0 5%;background:rgba(7,8,18,.68);
+            backdrop-filter:blur(18px);
+            border-bottom:1px solid rgba(255,255,255,.06);
+            z-index:1000}
+.logo{
+            font:700 22px "Space Grotesk",sans-serif;letter-spacing:.5px}
+.logo span{
+            color:var(--pink)}
+.nav{
+            display:flex;gap:30px}.nav a{color:#b5b6c4;font-size:14px;transition:.3s}.nav a:hover{color:#fff}
+.menu-toggle{
+            display:none;border:0;background:none;color:white;font-size:25px}
+.section{
+            width:min(1180px,90%);margin:auto;padding:110px 0}.section-dark{width:100%;padding-left:5%;padding-right:5%;background:rgba(255,255,255,.018);border-block:1px solid rgba(255,255,255,.04)}
+.hero{
+            min-height:100vh;padding-top:140px;display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.eyebrow{
+            font-size:12px;letter-spacing:4px;color:var(--pink);font-weight:700;margin-bottom:18px}
+.hero h1,.section-heading h2,.contact-box h2{
+            font-family:"Space Grotesk",sans-serif}
+.hero h1{
+            font-size:clamp(50px,7vw,88px);line-height:.92;letter-spacing:-4px}
+.hero h1 span{
+            color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.85)}
+.hero-text{ 
+            max-width:600px;color:var(--muted);line-height:1.85;margin:28px 0}
+.hero-actions{
+            display:flex;gap:14px;flex-wrap:wrap}
+.btn{
+            display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:13px 20px;border-radius:9px;font-weight:700;font-size:14px;transition:.35s}
+.btn-primary{
+            background:linear-gradient(100deg,var(--purple),var(--pink));box-shadow:0 12px 35px rgba(255,60,172,.18)}
+.btn-primary:hover{
+            transform:translateY(-4px);box-shadow:0 18px 45px rgba(255,60,172,.3)}
+.btn-ghost{ 
+            border:1px solid var(--line);background:var(--glass)}
+.btn-ghost:hover{
+            border-color:var(--pink);transform:translateY(-4px)}
+.hero-meta{
+            display:flex;gap:10px;flex-wrap:wrap;margin-top:30px}
+.hero-meta span,.chips span{
+            padding:8px 12px;border-radius:100px;border:1px solid var(--line);background:rgba(255,255,255,.03);font-size:12px;color:#c8c9d4}
+.hero-visual{
+            height:610px;position:relative;display:flex;align-items:center;justify-content:center}
+/*.main-portrait{
+            width:310px;height:400px;position:relative;z-index:5;border-radius:170px 170px 28px 28px;overflow:visible}
+.main-portrait>img{
+            width:100%;height:100%;object-fit:cover;border-radius:inherit;border:1px solid rgba(255,255,255,.18);box-shadow:0 0 70px rgba(139,92,246,.25)}
+
+.portrait-ring{
+            position:absolute;
+            inset:-15px;
+            border-radius:190px 190px 40px 40px;
+            border:1px solid rgba(255,60,172,.45);
+            box-shadow:inset 0 0 40px rgba(139,92,246,.15);
+            animation:pulse 3s ease-in-out infinite;z-index:-1
+            }
+.orbit{
+            position:absolute;
+            border:1px solid rgba(255,255,255,.13);
+            border-radius:50%}
+.orbit-one{ 
+            width:450px;
+            height:450px;
+            animation:spin 17s linear infinite}
+.orbit-two{
+            width:555px;
+            height:555px;border-style:dashed;
+            opacity:.5;
+            animation:spinReverse 25s linear infinite}
+.orbit-photo{
+            position:absolute;
+            width:82px;height:82px;border-radius:50%;padding:4px;background:linear-gradient(135deg,var(--pink),var(--purple));z-index:8;animation:float 4s ease-in-out infinite}.orbit-photo img{width:100%;height:100%;object-fit:cover;border-radius:50%;display:block}
+.photo-one{ 
+            top:75px;left:50%;transform:translateX(-50%)}
+.photo-two{right:15px;bottom:120px;animation-delay:-1.3s}
+.photo-three{left:15px;bottom:120px;animation-delay:-2.5s}
+.orbit-dot{
+            position:absolute;border-radius:50%;background:var(--pink);box-shadow:0 0 20px var(--pink)}.dot-a{width:8px;height:8px;top:70px;right:80px}.dot-b{width:6px;height:6px;left:60px;top:160px;background:var(--cyan);box-shadow:0 0 20px var(--cyan)}.dot-c{width:10px;height:10px;bottom:95px;right:70px}
+*/
+/*idea for profile picture*/
+/* =========================================
+   PROFILE IMAGE SLIDER
+========================================= */
+
+.profile-visual {
+    position: relative;
+    width: 100%;
+    height: 600px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Main orbit container */
+
+.profile-orbit {
+    position: relative;
+
+    width: 470px;
+    height: 470px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================================
+   CIRCULAR RINGS
+========================================= */
+
+.orbit-ring {
+    position: absolute;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+
+/* Main ring */
+
+.ring-one {
+    width: 390px;
+    height: 390px;
+
+    border: 1px solid rgba(255, 60, 172, 0.45);
+
+    animation: rotateRing 18s linear infinite;
+}
+
+
+/* Second ring */
+
+.ring-two {
+    width: 450px;
+    height: 450px;
+
+    border: 1px dashed rgba(139, 92, 246, 0.5);
+
+    animation: rotateRingReverse 25s linear infinite;
+}
+
+
+/* Third ring */
+
+.ring-three {
+    width: 510px;
+    height: 510px;
+
+    border: 1px solid rgba(67, 217, 255, 0.15);
+
+    animation: rotateRing 35s linear infinite;
+}
+
+
+/* =========================================
+   CENTER IMAGE
+========================================= */
+
+.profile-image-wrapper {
+
+    position: relative;
+
+    width: 290px;
+    height: 380px;
+
+    border-radius: 160px 160px 35px 35px;
+
+    padding: 5px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff3cac,
+            #8b5cf6,
+            #43d9ff
+        );
+
+    z-index: 10;
+
+    box-shadow:
+        0 0 60px rgba(139, 92, 246, 0.25),
+        0 25px 70px rgba(0, 0, 0, 0.45);
+}
+
+
+/* Actual image */
+
+.profile-image-wrapper img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    border-radius: 155px 155px 30px 30px;
+
+    background: #0b0e1a;
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+
+}
+
+
+/* Image changing animation */
+
+.profile-image-wrapper img.image-changing {
+
+    opacity: 0;
+
+    transform:
+        scale(0.92)
+        translateY(10px);
+
+}
+
+
+/* =========================================
+   ORBIT DOTS
+========================================= */
+
+.orbit-dot {
+
+    position: absolute;
+
+    width: 9px;
+    height: 9px;
+
+    border-radius: 50%;
+
+    z-index: 20;
+
+    animation:
+        dotPulse 2s ease-in-out infinite;
+}
+
+
+/* Pink dot */
+
+.dot-one {
+
+    top: 48px;
+    right: 110px;
+
+    background: #ff3cac;
+
+    box-shadow:
+        0 0 20px #ff3cac;
+}
+
+
+/* Purple dot */
+
+.dot-two {
+
+    left: 48px;
+    top: 210px;
+
+    background: #8b5cf6;
+
+    box-shadow:
+        0 0 20px #8b5cf6;
+
+    animation-delay: .7s;
+}
+
+
+/* Cyan dot */
+
+.dot-three {
+
+    right: 55px;
+    bottom: 80px;
+
+    background: #43d9ff;
+
+    box-shadow:
+        0 0 20px #43d9ff;
+
+    animation-delay: 1.2s;
+}
+
+
+/* =========================================
+   FLOATING ICONS
+========================================= */
+
+.floating-icon {
+
+    position: absolute;
+
+    width: 52px;
+    height: 52px;
+
+    border-radius: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(10, 12, 25, 0.85);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    backdrop-filter: blur(12px);
+
+    font-size: 18px;
+    font-weight: 700;
+
+    z-index: 30;
+
+    animation:
+        floatingIcon 4s ease-in-out infinite;
+}
+
+
+/* Code icon */
+
+.code-icon {
+
+    right: 15px;
+    top: 125px;
+
+    color: #43d9ff;
+
+    box-shadow:
+        0 0 25px rgba(67, 217, 255, 0.12);
+}
+
+
+/* Design icon */
+
+.design-icon {
+
+    left: 15px;
+    bottom: 110px;
+
+    color: #ff3cac;
+
+    box-shadow:
+        0 0 25px rgba(255, 60, 172, 0.12);
+
+    animation-delay: 1s;
+}
+
+
+/* =========================================
+   IMAGE COUNTER
+========================================= */
+
+.profile-counter {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 28px;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 13px;
+
+    color: #8f92a5;
+
+    letter-spacing: 2px;
+}
+
+
+#currentProfileNumber {
+
+    color: #ffffff;
+
+    font-weight: 700;
+
+}
+
+
+/* Small line */
+
+.counter-line {
+
+    width: 55px;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff3cac,
+            #8b5cf6
+        );
+}
+
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes rotateRing {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+@keyframes rotateRingReverse {
+
+    from {
+        transform: rotate(360deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+
+}
+
+
+@keyframes dotPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: .7;
+    }
+
+    50% {
+        transform: scale(1.6);
+        opacity: 1;
+    }
+
+}
+
+
+@keyframes floatingIcon {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .profile-visual {
+        height: 500px;
+    }
+
+    .profile-orbit {
+
+        width: 350px;
+        height: 350px;
+
+    }
+
+    .profile-image-wrapper {
+
+        width: 220px;
+        height: 300px;
+
+    }
+
+    .ring-one {
+
+        width: 310px;
+        height: 310px;
+
+    }
+
+    .ring-two {
+
+        width: 350px;
+        height: 350px;
+
+    }
+
+    .ring-three {
+
+        width: 390px;
+        height: 390px;
+
+    }
+
+    .code-icon {
+
+        right: 0;
+        top: 90px;
+
+    }
+
+    .design-icon {
+
+        left: 0;
+        bottom: 80px;
+
+    }
+
+}
+/*end for profile picture*/
+.floating-badge{
+            position:absolute;
+            width:48px;height:48px;border-radius:14px;
+            display:grid;place-items:center;
+            background:rgba(10,12,25,.8);
+            border:1px solid var(--line);backdrop-filter:blur(12px);font-weight:800}
+.badge-code{
+            right:-35px;top:80px;color:var(--cyan);
+            animation:float 4s ease-in-out infinite}
+                      
+.badge-design{
+            left:-35px;bottom:90px;color:var(--pink);animation:float 4s ease-in-out infinite 1s}
+
+
+.section-heading{
+            margin-bottom:55px}
+.section-heading h2{
+            font-size:clamp(36px,5vw,60px);line-height:1;letter-spacing:-2px}
+.section-heading h2 span,.contact-box h2 span{color:var(--pink)}
+.glass{
+            background:linear-gradient(145deg,rgba(255,255,255,.065),rgba(255,255,255,.018));border:1px solid var(--line);box-shadow:0 25px 80px rgba(0,0,0,.18);backdrop-filter:blur(15px)}
+.about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:24px}
+.about-story{padding:40px;border-radius:22px}
+.about-story p{color:var(--muted);line-height:1.9;margin-bottom:20px}
+.about-signature{margin-top:40px;font:600 13px "Space Grotesk";letter-spacing:4px;color:#fff}
+.service-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.service-card{padding:28px;border-radius:18px;transition:.35s}
+.service-card:hover,.skill-panel:hover,.design-card:hover{transform:translateY(-7px);border-color:rgba(255,60,172,.35)}
+.service-icon{font-size:12px;color:var(--pink);margin-bottom:28px}
+.service-card h3{font:600 22px "Space Grotesk";margin-bottom:10px}
+.service-card p{color:var(--muted);font-size:14px;line-height:1.7}
+.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.skill-panel{padding:30px;border-radius:18px;transition:.35s}
+.skill-panel h3{font:600 20px "Space Grotesk";margin-bottom:22px}.chips{display:flex;flex-wrap:wrap;gap:8px}
+.project-showcase{
+            display:grid;grid-template-columns:1.15fr .85fr;gap:0;overflow:hidden;border-radius:25px}.project-gallery{padding:18px;border-right:1px solid var(--line)}.project-main-image{height:480px;border-radius:16px;overflow:hidden;position:relative;background:#111}.project-main-image img{width:100%;height:100%;object-fit:cover;display:block;animation:imagePop .6s ease}.image-counter{position:absolute;right:16px;bottom:16px;padding:8px 11px;border-radius:20px;background:rgba(0,0,0,.65);font-size:12px}.thumbnail-row{display:flex;gap:9px;margin-top:10px}.thumbnail{width:75px;height:52px;border-radius:8px;overflow:hidden;border:1px solid var(--line);cursor:pointer;opacity:.5}.thumbnail.active{opacity:1;border-color:var(--pink)}.thumbnail img{width:100%;height:100%;object-fit:cover}
+.project-info{
+            padding:45px;display:flex;flex-direction:column;justify-content:center}.project-kicker{font-size:11px;letter-spacing:3px;color:var(--pink);font-weight:700}.project-info h3{font:600 clamp(30px,4vw,52px) "Space Grotesk";line-height:1.05;margin:16px 0}.project-info>p:not(.project-kicker){color:var(--muted);line-height:1.8}.project-tech{display:flex;gap:8px;flex-wrap:wrap;margin:24px 0}.project-tech span{font-size:11px;border:1px solid var(--line);border-radius:20px;padding:7px 10px;color:#c8c9d4}.project-controls{display:flex;align-items:center;gap:12px;margin-top:35px}.project-controls button{width:44px;height:44px;border-radius:50%;background:var(--glass);color:#fff;border:1px solid var(--line);cursor:pointer;transition:.3s}.project-controls button:hover{background:var(--pink);border-color:var(--pink)}.project-progress{height:2px;flex:1;background:rgba(255,255,255,.1);overflow:hidden}.project-progress span{display:block;height:100%;width:25%;background:linear-gradient(90deg,var(--purple),var(--pink));transition:.5s}
+.design-grid{
+            display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.design-card{height:280px;position:relative;overflow:hidden;border-radius:18px;border:1px solid var(--line);transition:.35s}.design-card img{width:100%;height:100%;object-fit:cover;transition:.6s}.design-card:hover img{transform:scale(1.08)}.design-card>div{position:absolute;inset:auto 0 0;padding:25px;background:linear-gradient(transparent,rgba(0,0,0,.92))}.design-card small{color:var(--pink);letter-spacing:2px}.design-card h3{font:600 22px "Space Grotesk";margin-top:5px}
+.timeline{
+            position:relative;max-width:900px;margin:auto}.timeline:before{content:"";position:absolute;left:50%;top:0;bottom:0;width:1px;background:linear-gradient(var(--pink),var(--purple),transparent)}.timeline-item{position:relative;width:50%;padding:0 45px 45px}.timeline-item:nth-child(even){margin-left:50%}.timeline-item:after{content:"";position:absolute;top:7px;right:-5px;width:10px;height:10px;border-radius:50%;background:var(--pink);box-shadow:0 0 20px var(--pink)}.timeline-item:nth-child(even):after{left:-5px;right:auto}.timeline-year{display:block;color:var(--pink);font-size:12px;letter-spacing:1px;margin-bottom:10px}.timeline-card{padding:24px;border-radius:16px}.timeline-card h3{font:600 20px "Space Grotesk";margin-bottom:8px}.timeline-card p{color:var(--muted);line-height:1.6;font-size:14px}
+.contact-box{
+            padding:50px;border-radius:25px;display:grid;grid-template-columns:1fr .8fr;gap:40px;align-items:center}.contact-box h2{font-size:clamp(40px,6vw,72px);line-height:.95;letter-spacing:-3px}.contact-note{color:var(--muted);margin-top:25px;line-height:1.7}.contact-links{display:flex;flex-direction:column;align-items:flex-start;gap:16px}.contact-links>a:not(.btn){color:#c9cad4;border-bottom:1px solid transparent;transition:.3s}.contact-links>a:not(.btn):hover{color:#fff;border-color:var(--pink)}
+footer{
+            text-align:center;padding:28px 5%;border-top:1px solid var(--line);color:#777b8e;font-size:12px}
+.reveal{
+            opacity:0;transform:translateY(35px);transition:opacity .8s ease,transform .8s ease}.reveal.show{opacity:1;transform:none}
+.cursor-glow{ 
+            position:fixed;width:260px;height:260px;border-radius:50%;pointer-events:none;background:radial-gradient(circle,rgba(139,92,246,.08),transparent 65%);transform:translate(-50%,-50%);z-index:-1}
+
+
+@keyframes spin{to{transform:rotate(360deg)}}@keyframes spinReverse{to{transform:rotate(-360deg)}}@keyframes pulse{50%{transform:scale(1.03);opacity:.7}}@keyframes float{50%{margin-top:-8px}}@keyframes imagePop{from{opacity:0;transform:scale(1.04)}to{opacity:1;transform:scale(1)}}
+@media(max-width:900px){.nav{display:none;position:absolute;top:78px;left:0;right:0;padding:25px;background:rgba(7,8,18,.97);flex-direction:column;text-align:center;border-bottom:1px solid var(--line)}.nav.open{display:flex}.menu-toggle{display:block}.hero{grid-template-columns:1fr;text-align:center}.hero-text{margin-inline:auto}.hero-actions,.hero-meta{justify-content:center}.hero-visual{height:540px}.about-grid,.project-showcase,.contact-box{grid-template-columns:1fr}.project-gallery{border-right:0;border-bottom:1px solid var(--line)}.skills-grid{grid-template-columns:1fr 1fr}.design-grid{grid-template-columns:1fr 1fr}.timeline:before{left:8px}.timeline-item,.timeline-item:nth-child(even){width:100%;margin-left:0;padding-left:35px;padding-right:0}.timeline-item:after,.timeline-item:nth-child(even):after{left:3px;right:auto}}
+@media(max-width:600px){.section{padding:80px 0}.section-dark{padding-left:5%;padding-right:5%}.hero h1{font-size:48px;letter-spacing:-2px}.hero-visual{transform:scale(.72);margin-top:-50px;margin-bottom:-50px}.skills-grid,.design-grid,.service-grid{grid-template-columns:1fr}.project-info{padding:30px}.project-main-image{height:330px}.contact-box{padding:30px}.site-header{padding:0 5%}}
